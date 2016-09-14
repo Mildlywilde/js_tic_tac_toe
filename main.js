@@ -7,12 +7,7 @@ $(function() {
   function didIWin(playerSquares) {
     var arr = []
     var countHash = {}
-    playerSquares.forEach(function(data) {
-      (data.split(" ")).forEach(function(thing) {
-        arr.push(thing);
-      });
-    });
-    arr.forEach(function(id) {
+    playerSquares.forEach(function(id) {
       if (Object.keys(countHash).includes(id)) {
         countHash[id] ++;
       } else {
@@ -29,13 +24,18 @@ $(function() {
   $('.square').on('click', function() {
     square = $(this)
     if (square.text() === '') {
+    var data = square.data("wincons");
       if (turn % 2 === 0) {
         square.text("O");
-        oSquares.push(square.data("wincons"));
+        data.split(" ").forEach(function(thing) {
+          oSquares.push(thing);
+        });
         didIWin(oSquares);
       } else {
         square.text("X");
-        xSquares.push(square.data("wincons"));
+        data.split(" ").forEach(function(thing) {
+          xSquares.push(thing);
+        });
         didIWin(xSquares);
       };
       turn ++
