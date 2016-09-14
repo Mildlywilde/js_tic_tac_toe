@@ -2,9 +2,15 @@
   box-sizing: border-box;
 }
 
+.board {
+  margin: 0 auto;
+  width: 600px;
+}
+
 .square {
   width: 200px;
   height: 200px;
   border: 2px solid black;
   font-size: 6rem;
+  text-align: center;
 }
