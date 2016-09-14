@@ -1,0 +1,10 @@
+*{
+  box-sizing: border-box;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  font-size: 6rem;
+}
