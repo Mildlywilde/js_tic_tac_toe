@@ -7,11 +7,11 @@ $(function() {
   function didIWin(playerSquares) {
     var arr = [];
     var countHash = {};
-    playerSquares.forEach(function(id) {
-      if (Object.keys(countHash).includes(id)) {
-        countHash[id] ++;
+    playerSquares.forEach(function(key) {
+      if (Object.keys(countHash).includes(key)) {
+        countHash[key] ++;
       } else {
-        countHash[id] = 1;
+        countHash[key] = 1;
       };
     });
     Object.keys(countHash).forEach(function(key) {
