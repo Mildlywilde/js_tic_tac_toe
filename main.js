@@ -17,6 +17,7 @@ $(function() {
     Object.keys(countHash).forEach(function(key) {
       if (countHash[key] === 3) {
         alert("WINNER!");
+        location.reload()
       };
     });
   };
@@ -41,6 +42,7 @@ $(function() {
       turn ++;
       if (turn === 9) {
         alert("DRAW")
+        location.reload()
       }
     } else {
       alert("YOU SHALL NOT PASS!");
