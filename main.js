@@ -1,28 +1,28 @@
 $(function() {
 
-  var turn = 1
-  var xSquares = []
-  var oSquares = []
+  var turn = 0;
+  var xSquares = [];
+  var oSquares = [];
 
   function didIWin(playerSquares) {
-    var arr = []
-    var countHash = {}
+    var arr = [];
+    var countHash = {};
     playerSquares.forEach(function(id) {
       if (Object.keys(countHash).includes(id)) {
         countHash[id] ++;
       } else {
         countHash[id] = 1;
-      }
-    })
+      };
+    });
     Object.keys(countHash).forEach(function(key) {
       if (countHash[key] === 3) {
         alert("WINNER!");
-      }
-    })
-  }
+      };
+    });
+  };
 
   $('.square').on('click', function() {
-    square = $(this)
+    square = $(this);
     if (square.text() === '') {
     var data = square.data("wincons");
       if (turn % 2 === 0) {
@@ -38,11 +38,14 @@ $(function() {
         });
         didIWin(xSquares);
       };
-      turn ++
+      turn ++;
+      if (turn === 9) {
+        alert("DRAW")
+      }
     } else {
-      alert("YOU SHALL NOT PASS!")
-    }
-  })
+      alert("YOU SHALL NOT PASS!");
+    };
+  });
 
 
 });
